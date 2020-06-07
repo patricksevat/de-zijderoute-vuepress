@@ -8,8 +8,8 @@ backend:
     uploadMedia: '[skip ci] Upload “{{path}}”'
     deleteMedia: '[skip ci] Delete “{{path}}”'
 
-media_folder: static/uploads
-public_folder: /uploads
+media_folder: docs/.vuepress/public/media
+public_folder: docs/.vuepress/public
 
 # logo_url: "{{site_url}}/images/logo_MEN.png"
 
@@ -18,7 +18,7 @@ public_folder: /uploads
 collections:
   - name: "cards"
     label: "Card"
-    folder: "static/cards"
+    folder: "docs/cards"
     create: true
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "card"}
@@ -30,7 +30,7 @@ collections:
 
   - name: "dynamic-pages"
     label: "Dynamische pagina's"
-    folder: "static/dynamic-pages"
+    folder: "docs/dynamic-pages"
     create: true
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "dynamic-page"}
@@ -47,7 +47,7 @@ collections:
     label: "Pages"
     delete: true
     files:
-      - file: "static/pages/index.md"
+      - file: "docs/pages/index.md"
         label: "Home"
         name: "index"
         fields:
