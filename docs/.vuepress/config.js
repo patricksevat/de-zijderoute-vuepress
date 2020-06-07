@@ -7,11 +7,6 @@ const nodePath = require('path');
 const replaceRegex = /\/(dynamic-pages|pages)/;
 
 module.exports = {
-  patterns: [
-    '**/dynamic-pages/*.md',
-    '**/pages/*.md',
-    '**/*.vue',
-  ],
   title: 'De Zijderoute Kinderyoga',
   description: 'De Zijderoute - Avontuurlijke kinderyoga',
   extendPageData ($page) {
@@ -46,7 +41,6 @@ let cache;
 
 function retrieveCards () {
   if(cache) {
-    console.log('returning cache');
     return cache;
   }
 
