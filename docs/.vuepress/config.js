@@ -1,22 +1,23 @@
-const grayMatter = require('gray-matter');
-const md = require('markdown-it')();
-const glob = require('glob');
-const fs = require('fs');
-const nodePath = require('path');
+const grayMatter = require("gray-matter");
+const md = require("markdown-it")();
+const glob = require("glob");
+const fs = require("fs");
+const nodePath = require("path");
 
 const replaceRegex = /\/(dynamic-pages|pages)/;
 
 module.exports = {
-  title: 'De Zijderoute Kinderyoga',
-  description: 'De Zijderoute - Avontuurlijke kinderyoga',
-  extendPageData ($page) {
+  patterns: ["**/dynamic-pages/*.md", "**/pages/*.md", "**/*.vue"],
+  title: "De Zijderoute Kinderyoga",
+  description: "De Zijderoute - Avontuurlijke kinderyoga",
+  extendPageData($page) {
     const {
-      frontmatter,         // page's frontmatter object
-      regularPath,         // current page's default link (follow the file hierarchy)
-    } = $page
+      frontmatter, // page's frontmatter object
+      regularPath, // current page's default link (follow the file hierarchy)
+    } = $page;
 
     // Change url to something more friendly
-    $page.path = regularPath.replace(replaceRegex, '');
+    $page.path = regularPath.replace(replaceRegex, "");
 
     // TODO better approach:
     // 0. create plugin
@@ -25,29 +26,29 @@ module.exports = {
     // 2. Retrieve list of possible relation fields and the dir location
     // 3. Hook into the `extendPageData`
     // 4. set $page[relationFieldName] with frontmatter and (parsed) content
-    if(frontmatter && frontmatter.cards) {
+    if (frontmatter && frontmatter.cards) {
       const { cards } = frontmatter;
-      $page.cards = cards.map(cardTitle => {
+      $page.cards = cards.map((cardTitle) => {
         const availableCards = retrieveCards();
-        return availableCards.find(card => {
-          return card.frontmatter.title === cardTitle
-        })
-      })
+        return availableCards.find((card) => {
+          return card.frontmatter.title === cardTitle;
+        });
+      });
     }
-  }
-}
+  },
+};
 
 let cache;
 
-function retrieveCards () {
-  if(cache) {
+function retrieveCards() {
+  if (cache) {
     return cache;
   }
 
-  const cardsDir = nodePath.join(__dirname, '..', 'cards');
+  const cardsDir = nodePath.join(__dirname, "..", "cards");
   const allCardsFilePath = glob.sync(`${cardsDir}/*.md`);
-  cache = allCardsFilePath.map(filePath => {
-    const fileContents = fs.readFileSync(filePath, 'utf-8');
+  cache = allCardsFilePath.map((filePath) => {
+    const fileContents = fs.readFileSync(filePath, "utf-8");
     const { content, data } = grayMatter(fileContents);
 
     return {
@@ -56,8 +57,8 @@ function retrieveCards () {
       _strippedContent: content,
       frontmatter: data,
       parsedMarkdown: md.render(content),
-    }
-  })
+    };
+  });
 
   return cache;
 }
