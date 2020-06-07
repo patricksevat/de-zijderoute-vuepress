@@ -2,15 +2,11 @@
   <v-app>
     <v-navigation-drawer app v-model="drawer">
       <v-list dense nav>
-        <!--        <v-list-item v-for="item in $site" :key="item.title" link>-->
-        <!--          <v-list-item-icon>-->
-        <!--            <v-icon>{{ item.icon }}</v-icon>-->
-        <!--          </v-list-item-icon>-->
-
-        <!--          <v-list-item-content>-->
-        <!--            <v-list-item-title>{{ item.title }}</v-list-item-title>-->
-        <!--          </v-list-item-content>-->
-        <!--        </v-list-item>-->
+        <v-list-item v-for="item in menuItems" :key="item.title" link>
+          <v-list-item-content>
+            <v-list-item-title>{{ item.menuTitle }}</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
       </v-list>
     </v-navigation-drawer>
 
@@ -33,7 +29,20 @@ module.exports = {
   data() {
     return {
       drawer: false,
+      menuItems: [],
     };
+  },
+  created() {
+    this.menuItems = this.$site.pages
+      .map((pageData) => {
+        return pageData.frontmatter;
+      })
+      .sort((pageFrontmatter, page2Frontmatter) => {
+        if (pageFrontmatter.menuOrder < page2Frontmatter.menuOrder) {
+          return -1;
+        }
+        return 1;
+      });
   },
 };
 </script>

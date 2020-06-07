@@ -36,6 +36,8 @@ collections:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "dynamic-page"}
       - {label: "Layout", name: "layout", widget: "hidden", default: "PageWithCards"}
       - {label: "Titel", name: "title", widget: "string"}
+      - {label: "Menu naam", name: "menuTitle", description: "Weergave in menu", widget: "string"}
+      - {label: "Menu posities", name: "menuOrder", widget: "number", min: 1, step: 1}
       - label: "Cards"
         name: "cards"
         widget: relation
@@ -57,3 +59,4 @@ collections:
           - {label: "Layout", name: "layout", widget: "hidden", default: "IndexPage"}
           - {label: "Titel", name: "title", widget: "string"}
           - {label: "Sub titel", name: "subtitle", widget: "string"}
+          - {label: "Menu naam", name: "menuTitle", description: "Weergave in menu", widget: "string"}
