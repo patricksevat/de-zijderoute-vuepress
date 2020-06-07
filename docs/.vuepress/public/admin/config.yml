@@ -34,6 +34,7 @@ collections:
     create: true
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "dynamic-page"}
+      - {label: "Layout", name: "layout", widget: "hidden", default: "PageWithCards"}
       - {label: "Titel", name: "title", widget: "string"}
       - label: "Cards"
         name: "cards"
@@ -53,4 +54,6 @@ collections:
         name: "index"
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "index-page"}
+          - {label: "Layout", name: "layout", widget: "hidden", default: "IndexPage"}
           - {label: "Titel", name: "title", widget: "string"}
+          - {label: "Sub titel", name: "subtitle", widget: "string"}
