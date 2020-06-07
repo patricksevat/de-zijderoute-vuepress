@@ -7,6 +7,7 @@ const nodePath = require("path");
 const replaceRegex = /\/(dynamic-pages|pages)/;
 
 module.exports = {
+  base: "/",
   patterns: ["**/dynamic-pages/*.md", "**/pages/*.md", "**/*.vue"],
   title: "De Zijderoute Kinderyoga",
   description: "De Zijderoute - Avontuurlijke kinderyoga",

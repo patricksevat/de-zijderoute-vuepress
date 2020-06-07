@@ -1,6 +1,6 @@
 import Vuetify from "vuetify";
 import "vuetify/dist/vuetify.css";
-import "./theme/styles/global.scss";
+import "./styles/global.scss";
 
 export default ({ Vue, options }) => {
   Vue.use(Vuetify);
