@@ -1,7 +1,9 @@
 ---
 templateKey: dynamic-page
 title: Lespakketten
-cards: Yoga op maat
+cards:
+  - Yoga op maat
+  - Yoga in groepen
 ---
 
 
