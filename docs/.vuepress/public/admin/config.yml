@@ -42,6 +42,7 @@ collections:
         displayFields: ["title"]
         searchFields: ["title"]
         valueField: "title"
+        multiple: true
 
   - name: "pages"
     label: "Pages"

@@ -1,3 +1,6 @@
+const grayMatter = require('gray-matter');
+const fs = require('fs');
+
 const replaceRegex = /\/(dynamic-pages|pages)/;
 
 module.exports = {

@@ -19,13 +19,8 @@ extendPageData ($page) {
     } = $page
 
     // Change url to something more friendly
+    const replaceRegex = /\/(dynamic-pages|pages)/;
     $page.path = regularPath.replace(replaceRegex, '');
-
-    // 1. Add extra fields.
-    $page.xxx = 'xxx'
-
-    // 2. Change frontmatter.
-    frontmatter.sidebar = 'auto'
   }
     ``` 
     
