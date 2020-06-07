@@ -9,6 +9,9 @@ const replaceRegex = /\/(dynamic-pages|pages)/;
 module.exports = {
   base: "/",
   patterns: ["**/dynamic-pages/*.md", "**/pages/*.md", "**/*.vue"],
+  configureWebpack: (config) => {
+    config.devtool = "source-map";
+  },
   title: "De Zijderoute Kinderyoga",
   description: "De Zijderoute - Avontuurlijke kinderyoga",
   extendPageData($page) {

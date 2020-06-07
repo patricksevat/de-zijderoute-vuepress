@@ -1,7 +1,7 @@
 {
   "scripts": {
     "dev": "vuepress dev docs --debug",
-    "build": "vuepress build docs"
+    "build": "vuepress build docs --debug"
   },
   "devDependencies": {
     "@mdi/js": "^5.3.45",
