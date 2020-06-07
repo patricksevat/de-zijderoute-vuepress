@@ -1,6 +1,6 @@
 <template>
   <v-app id="zijderoute-container">
-    <v-navigation-drawer app v-model="drawer">
+    <v-navigation-drawer app v-model="drawer" disable-resize-watcher>
       <v-list dense nav>
         <v-list-item
           v-for="item in menuItems"
@@ -15,7 +15,7 @@
     </v-navigation-drawer>
 
     <v-content>
-      <v-container fluid>
+      <v-container fluid class="zr-full-height">
         <v-btn
           absolute
           dark
@@ -26,8 +26,8 @@
         >
           <v-icon>{{ svgPath }}</v-icon>
         </v-btn>
-        <h1 class="zr-title">{{ $page.frontmatter.title }}</h1>
-        <h2 class="zr-subtitle">{{ $page.frontmatter.subtitle }}</h2>
+        <h1 class="zr-title zr-font">{{ $page.frontmatter.title }}</h1>
+        <h2 class="zr-subtitle zr-font">{{ $page.frontmatter.subtitle }}</h2>
         <slot></slot>
       </v-container>
     </v-content>
@@ -58,8 +58,11 @@
 .zr-subtitle {
   color: #fff;
   text-shadow: 5px 3px 8px #000;
-  font-family: "Delius Swash Caps", cursive;
   text-align: center;
+}
+
+.zr-full-height {
+  height: 100%;
 }
 </style>
 
