@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app id="zijderoute-container">
     <v-navigation-drawer app v-model="drawer">
       <v-list dense nav>
         <v-list-item v-for="item in menuItems" :key="item.title" link>
@@ -23,6 +23,26 @@
     <v-footer app> </v-footer>
   </v-app>
 </template>
+
+<style>
+@keyframes bg-images {
+  0% {
+    background-image: url("/assets/kinderyoga-1.jpg");
+  }
+  100% {
+    background-image: url("/assets/flamingo.jpeg");
+  }
+}
+
+#zijderoute-container {
+  background-size: cover;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-duration: 15s;
+  animation-direction: alternate;
+  animation-name: bg-images;
+}
+</style>
 
 <script>
 module.exports = {
