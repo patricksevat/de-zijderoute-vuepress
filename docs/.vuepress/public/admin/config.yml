@@ -1,0 +1,55 @@
+backend:
+  name: git-gateway
+  branch: master
+  commit_messages:
+    create: 'Create {{collection}} “{{slug}}”'
+    update: 'Update {{collection}} “{{slug}}”'
+    delete: 'Delete {{collection}} “{{slug}}”'
+    uploadMedia: '[skip ci] Upload “{{path}}”'
+    deleteMedia: '[skip ci] Delete “{{path}}”'
+
+media_folder: static/uploads
+public_folder: /uploads
+
+# logo_url: "{{site_url}}/images/logo_MEN.png"
+
+# local_backend: true
+
+collections:
+  - name: "cards"
+    label: "Card"
+    folder: "static/cards"
+    create: true
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "card"}
+      - {label: "Titel", name: "title", widget: "string"}
+      - {label: "Icoon", name: "icon", description: "https://material.io/resources/icons/?style=baseline", widget: string }
+      - {label: "Foto", name: "featuredimage", widget: image, required: false}
+      - {label: "Foto beschrijving", name: "featuredimage_alt", widget: string, required: false}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  - name: "dynamic-pages"
+    label: "Dynamische pagina's"
+    folder: "static/dynamic-pages"
+    create: true
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "dynamic-page"}
+      - {label: "Titel", name: "title", widget: "string"}
+      - label: "Cards"
+        name: "cards"
+        widget: relation
+        collection: "cards"
+        displayFields: ["title"]
+        searchFields: ["title"]
+        valueField: "title"
+
+  - name: "pages"
+    label: "Pages"
+    delete: true
+    files:
+      - file: "static/pages/index.md"
+        label: "Home"
+        name: "index"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "index-page"}
+          - {label: "Titel", name: "title", widget: "string"}
