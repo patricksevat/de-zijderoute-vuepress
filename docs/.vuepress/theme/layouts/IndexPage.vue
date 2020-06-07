@@ -23,34 +23,34 @@
             </v-list-item-content>
           </v-list-item>
           <!-- TODO add validation-->
-          <!--          <v-form netlify class="pa-4 zr-form">-->
-          <!--            <v-text-field-->
-          <!--              background-color="white"-->
-          <!--              type="text"-->
-          <!--              outlined-->
-          <!--              label="Naam"-->
-          <!--              hint="Jouw naam"-->
-          <!--            ></v-text-field>-->
-          <!--            <v-text-field-->
-          <!--              background-color="white"-->
-          <!--              type="email"-->
-          <!--              outlined-->
-          <!--              label="Email"-->
-          <!--              hint="Jouw emailadres"-->
-          <!--            ></v-text-field>-->
-          <!--            <v-textarea-->
-          <!--              background-color="white"-->
-          <!--              label="Bericht"-->
-          <!--              outlined-->
-          <!--              hint="Waar kunnen we je mee helpen?"-->
-          <!--            ></v-textarea>-->
-          <!--            <v-btn-->
-          <!--              class="mb-4 white&#45;&#45;text"-->
-          <!--              type="submit"-->
-          <!--              color="light-green lighten-1"-->
-          <!--              >Verstuur</v-btn-->
-          <!--            >-->
-          <!--          </v-form>-->
+          <v-form netlify class="pa-4 zr-form">
+            <v-text-field
+              background-color="white"
+              type="text"
+              outlined
+              label="Naam"
+              hint="Jouw naam"
+            ></v-text-field>
+            <v-text-field
+              background-color="white"
+              type="email"
+              outlined
+              label="Email"
+              hint="Jouw emailadres"
+            ></v-text-field>
+            <v-textarea
+              background-color="white"
+              label="Bericht"
+              outlined
+              hint="Waar kunnen we je mee helpen?"
+            ></v-textarea>
+            <v-btn
+              class="mb-4 white--text"
+              type="submit"
+              color="light-green lighten-1"
+              >Verstuur</v-btn
+            >
+          </v-form>
         </v-card>
       </v-col>
     </v-row>
