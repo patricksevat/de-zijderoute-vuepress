@@ -2,9 +2,10 @@
 templateKey: card
 title: Origineel kinderfeestje!
 icon: white-balance-sunny
-featuredimage: /uploads/kinderfeestje.jpg
+featuredimage: /media/kinderfeestje.jpg
 ---
-Wilt u voor uw kind een origineel en onvergetelijk **verjaardagsfeest**? De Zijderoute verzorgt een complete workshop op maat: *thema naar keuze, yoga, muziek, dans en creativiteit*. Kortom: **energie mag stromen!**
+
+Wilt u voor uw kind een origineel en onvergetelijk **verjaardagsfeest**? De Zijderoute verzorgt een complete workshop op maat: _thema naar keuze, yoga, muziek, dans en creativiteit_. Kortom: **energie mag stromen!**
 
 Locatie nader te bepalen
 

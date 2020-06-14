@@ -9,7 +9,7 @@ backend:
     deleteMedia: '[skip ci] Delete “{{path}}”'
 
 media_folder: docs/.vuepress/public/media
-public_folder: docs/.vuepress/public
+public_folder: /media
 
 # logo_url: "{{site_url}}/images/logo_MEN.png"
 
