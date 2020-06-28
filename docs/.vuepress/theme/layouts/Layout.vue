@@ -36,6 +36,7 @@
 </template>
 
 <style>
+/* TODO add fallback for Edge / IE */
 @keyframes bg-images {
   0% {
     background-image: url("/assets/kinderyoga-1.jpg");
