@@ -1,9 +1,10 @@
 ---
 templateKey: card
 title: Yoga in groepen
-icon: star_rate
+icon: account-group
 ---
-*De Zijderoute*biedt yoga aan in grote en kleine groepen. Deze lespakketten zijn speciaal ontwikkelt voor**basisscholen**en**naschoolse opvang**. Wekelijks staat er een nieuw thema centraal al dan niet aansluitend bij de lesstof/onderwerpen waar de kinderen mee bezig zijn.
+*De Zijderoute* biedt yoga aan in grote en kleine groepen. Deze lespakketten zijn speciaal ontwikkelt voor **basisscholen** 
+en **naschoolse opvang**. Wekelijks staat er een nieuw thema centraal al dan niet aansluitend bij de lesstof/onderwerpen waar de kinderen mee bezig zijn.
 
 **GROTE GROEP**
 
