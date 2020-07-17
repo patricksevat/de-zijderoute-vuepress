@@ -23,8 +23,9 @@
             </v-list-item-content>
           </v-list-item>
           <!-- TODO add validation-->
-          <v-form class="pa-4 zr-form">
+          <form netlify class="pa-4 zr-form">
             <v-text-field
+              name="name"
               background-color="white"
               type="text"
               outlined
@@ -32,6 +33,7 @@
               hint="Jouw naam"
             ></v-text-field>
             <v-text-field
+              name="email"
               background-color="white"
               type="email"
               outlined
@@ -39,6 +41,7 @@
               hint="Jouw emailadres"
             ></v-text-field>
             <v-textarea
+              name="message"
               background-color="white"
               label="Bericht"
               outlined
@@ -50,7 +53,7 @@
               color="light-green lighten-1"
               >Verstuur</v-btn
             >
-          </v-form>
+          </form>
         </v-card>
       </v-col>
     </v-row>
