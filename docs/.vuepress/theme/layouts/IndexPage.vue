@@ -28,23 +28,30 @@
             data-netlify="true"
             method="POST"
             class="pa-4 zr-form"
+            enctype="application/x-www-form-urlencoded"
           >
-            <v-text-field
-              name="name"
-              background-color="white"
-              type="text"
-              outlined
-              label="Naam"
-              hint="Jouw naam"
-            ></v-text-field>
-            <v-text-field
-              name="email"
-              background-color="white"
-              type="email"
-              outlined
-              label="Email"
-              hint="Jouw emailadres"
-            ></v-text-field>
+            <input
+              type="hidden"
+              name="form-name"
+              value="zijderoute-contact-form"
+            />
+            <input type="text" name="foo" />
+            <!--            <v-text-field-->
+            <!--              name="name"-->
+            <!--              background-color="white"-->
+            <!--              type="text"-->
+            <!--              outlined-->
+            <!--              label="Naam"-->
+            <!--              hint="Jouw naam"-->
+            <!--            ></v-text-field>-->
+            <!--            <v-text-field-->
+            <!--              name="email"-->
+            <!--              background-color="white"-->
+            <!--              type="email"-->
+            <!--              outlined-->
+            <!--              label="Email"-->
+            <!--              hint="Jouw emailadres"-->
+            <!--            ></v-text-field>-->
             <!--            <v-textarea-->
             <!--              name="message"-->
             <!--              background-color="white"-->
