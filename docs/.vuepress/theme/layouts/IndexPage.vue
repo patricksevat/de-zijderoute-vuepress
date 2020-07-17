@@ -23,7 +23,7 @@
             </v-list-item-content>
           </v-list-item>
           <!-- TODO add validation-->
-          <v-form netlify class="pa-4 zr-form">
+          <v-form class="pa-4 zr-form">
             <v-text-field
               background-color="white"
               type="text"
