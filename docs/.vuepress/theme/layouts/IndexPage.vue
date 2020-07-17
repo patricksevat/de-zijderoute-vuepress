@@ -23,7 +23,11 @@
             </v-list-item-content>
           </v-list-item>
           <!-- TODO add validation-->
-          <form data-netlify="true" class="pa-4 zr-form">
+          <form
+            name="zijderoute-contact-form"
+            data-netlify="true"
+            class="pa-4 zr-form"
+          >
             <v-text-field
               name="name"
               background-color="white"
