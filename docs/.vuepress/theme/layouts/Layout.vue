@@ -26,7 +26,7 @@
       </v-list>
     </v-navigation-drawer>
 
-    <v-content>
+    <v-main>
       <v-container fluid class="zr-full-height">
         <v-btn
           absolute
@@ -43,7 +43,7 @@
 
         <slot></slot>
       </v-container>
-    </v-content>
+    </v-main>
     <v-footer app color="pink lighten-4" height="50">
       <v-btn icon color="white" href="mailto:joelle.spoelder@gmail.com">
         <v-icon>{{ emailIconSvg }}</v-icon>
