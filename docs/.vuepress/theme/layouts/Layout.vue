@@ -1,11 +1,23 @@
 <template>
   <v-app id="zijderoute-container">
     <v-navigation-drawer app v-model="drawer" disable-resize-watcher>
-      <v-list dense nav>
+      <v-list dense>
+        <v-list-item class="pink lighten-3">
+          <v-list-item-content>
+            <v-list-item-title>Menu </v-list-item-title>
+          </v-list-item-content>
+          <v-list-item-action>
+            <v-btn icon @click="drawer = !drawer">
+              <v-icon> {{ closeIconSvg }}</v-icon>
+            </v-btn>
+          </v-list-item-action>
+        </v-list-item>
+        <v-divider></v-divider>
         <v-list-item
           v-for="item in menuItems"
           :key="item.title"
           :href="item.path"
+          :class="$route.path === item.path ? 'pink lighten-4 elevation-1' : ''"
         >
           <v-list-item-content>
             <v-list-item-title>{{ item.menuTitle }}</v-list-item-title>
@@ -40,7 +52,7 @@
   </v-app>
 </template>
 
-<style>
+<style lang="scss">
 /* TODO add fallback for Edge / IE */
 @keyframes bg-images {
   0% {
@@ -58,6 +70,10 @@
   animation-duration: 15s;
   animation-direction: alternate;
   animation-name: bg-images;
+
+  .v-list {
+    padding: 0;
+  }
 }
 
 .zr-title,
@@ -73,7 +89,7 @@
 </style>
 
 <script>
-import { mdiMenu, mdiEmail } from "@mdi/js";
+import { mdiMenu, mdiEmail, mdiClose } from "@mdi/js";
 
 export default {
   data() {
@@ -81,6 +97,7 @@ export default {
       drawer: false,
       menuIconSvg: mdiMenu,
       emailIconSvg: mdiEmail,
+      closeIconSvg: mdiClose,
       menuItems: [],
     };
   },
