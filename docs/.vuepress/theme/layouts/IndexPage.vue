@@ -45,13 +45,13 @@
               label="Email"
               hint="Jouw emailadres"
             ></v-text-field>
-            <v-textarea
-              name="message"
-              background-color="white"
-              label="Bericht"
-              outlined
-              hint="Waar kunnen we je mee helpen?"
-            ></v-textarea>
+            <!--            <v-textarea-->
+            <!--              name="message"-->
+            <!--              background-color="white"-->
+            <!--              label="Bericht"-->
+            <!--              outlined-->
+            <!--              hint="Waar kunnen we je mee helpen?"-->
+            <!--            ></v-textarea>-->
             <v-btn
               class="mb-4 white--text"
               type="submit"
