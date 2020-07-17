@@ -26,6 +26,7 @@
           <form
             name="zijderoute-contact-form"
             data-netlify="true"
+            method="POST"
             class="pa-4 zr-form"
           >
             <v-text-field
