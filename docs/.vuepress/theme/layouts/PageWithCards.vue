@@ -1,18 +1,18 @@
 <template>
   <Layout>
-    <v-row class="zr-masonry">
+    <div class="zr-masonry">
       <v-card
         v-for="card in $page.cards"
         class="zr-card"
         :class="{ 'zr-card--large': !!card.frontmatter.featuredimage }"
-        color="light-green lighten-1"
+        color="green lighten-4"
       >
-        <v-icon size="24">{{ $page.icons[card.frontmatter.icon] }}</v-icon>
-        <p>{{ card.frontmatter.icon }}</p>
-        <v-card-title
-          class="zr-font zr-card-title"
-          v-text="card.frontmatter.title"
-        >
+        <v-card-title class="zr-font zr-card-title elevation-1">
+          <v-avatar color="green lighten-3 mr-2">
+            <v-icon size="24">{{ $page.icons[card.frontmatter.icon] }}</v-icon>
+          </v-avatar>
+
+          {{ card.frontmatter.title }}
         </v-card-title>
         <v-img
           class="white--text align-end"
@@ -20,7 +20,7 @@
         ></v-img>
         <v-card-text v-html="card.parsedMarkdown"></v-card-text>
       </v-card>
-    </v-row>
+    </div>
   </Layout>
 </template>
 
@@ -30,15 +30,20 @@ $zr-grid-gap: 2em;
 .zr-masonry {
   display: grid;
   grid-gap: $zr-grid-gap;
-  grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: minmax(100px, auto);
-  grid-auto-flow: row dense;
-
-  margin: 24px 24px 0 24px;
+  grid-template-columns: minmax(0, 1fr);
+  padding: 24px;
 }
 
-.zr-card--large {
-  grid-row-end: span 2;
+@media (min-width: 768px) {
+  .zr-masonry {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .zr-masonry {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 
 .zr-card {

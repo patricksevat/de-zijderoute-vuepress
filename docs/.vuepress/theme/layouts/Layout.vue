@@ -24,14 +24,19 @@
           color="pink lighten-4"
           @click="drawer = !drawer"
         >
-          <v-icon>{{ svgPath }}</v-icon>
+          <v-icon>{{ menuIconSvg }}</v-icon>
         </v-btn>
         <h1 class="zr-title zr-font">{{ $page.frontmatter.title }}</h1>
         <h2 class="zr-subtitle zr-font">{{ $page.frontmatter.subtitle }}</h2>
+
         <slot></slot>
       </v-container>
     </v-content>
-    <v-footer app color="pink lighten-4" height="30"></v-footer>
+    <v-footer app color="pink lighten-4" height="50">
+      <v-btn icon color="white" href="mailto:joelle.spoelder@gmail.com">
+        <v-icon>{{ emailIconSvg }}</v-icon>
+      </v-btn>
+    </v-footer>
   </v-app>
 </template>
 
@@ -68,13 +73,14 @@
 </style>
 
 <script>
-import { mdiMenu } from "@mdi/js";
+import { mdiMenu, mdiEmail } from "@mdi/js";
 
 export default {
   data() {
     return {
       drawer: false,
-      svgPath: mdiMenu,
+      menuIconSvg: mdiMenu,
+      emailIconSvg: mdiEmail,
       menuItems: [],
     };
   },
