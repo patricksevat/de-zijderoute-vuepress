@@ -1,7 +1,7 @@
 ---
 templateKey: card
 title: Waarom?
-icon: vpn_key
+icon: key
 ---
 
 Kinderyoga kan middels een veelvoud van gestrekte bewegingen een bijdrage leveren aan een gezond lichaam en vrolijke persoonlijkheid!

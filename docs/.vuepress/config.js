@@ -3,18 +3,17 @@ const md = require("markdown-it")();
 const glob = require("glob");
 const fs = require("fs");
 const nodePath = require("path");
+const camelCase = require("camelcase");
+const icons = require("@mdi/js");
 
 const replaceRegex = /\/(dynamic-pages|pages)/;
 
 module.exports = {
   base: "/",
   patterns: ["**/dynamic-pages/*.md", "**/pages/*.md", "**/*.vue"],
-  // configureWebpack: (config) => {
-  //   config.devtool = "source-map";
-  // },
   title: "De Zijderoute Kinderyoga",
   description: "De Zijderoute - Avontuurlijke kinderyoga",
-  extendPageData($page) {
+  async extendPageData($page) {
     const {
       frontmatter, // page's frontmatter object
       regularPath, // current page's default link (follow the file hierarchy)
@@ -22,6 +21,7 @@ module.exports = {
 
     // Change url to something more friendly
     $page.path = regularPath.replace(replaceRegex, "");
+    $page.icons = {};
 
     // TODO better approach:
     // 0. create plugin
@@ -35,6 +35,8 @@ module.exports = {
       $page.cards = cards.map((cardTitle) => {
         const availableCards = retrieveCards();
         return availableCards.find((card) => {
+          $page.icons[card.frontmatter.icon] =
+            icons[camelCase(`mdi-${card.frontmatter.icon}`)];
           return card.frontmatter.title === cardTitle;
         });
       });
