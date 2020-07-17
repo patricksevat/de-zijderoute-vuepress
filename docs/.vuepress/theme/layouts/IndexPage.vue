@@ -35,30 +35,30 @@
               name="form-name"
               value="zijderoute-contact-form"
             />
-            <input type="text" name="foo" />
-            <!--            <v-text-field-->
-            <!--              name="name"-->
-            <!--              background-color="white"-->
-            <!--              type="text"-->
-            <!--              outlined-->
-            <!--              label="Naam"-->
-            <!--              hint="Jouw naam"-->
-            <!--            ></v-text-field>-->
-            <!--            <v-text-field-->
-            <!--              name="email"-->
-            <!--              background-color="white"-->
-            <!--              type="email"-->
-            <!--              outlined-->
-            <!--              label="Email"-->
-            <!--              hint="Jouw emailadres"-->
-            <!--            ></v-text-field>-->
-            <!--            <v-textarea-->
-            <!--              name="message"-->
-            <!--              background-color="white"-->
-            <!--              label="Bericht"-->
-            <!--              outlined-->
-            <!--              hint="Waar kunnen we je mee helpen?"-->
-            <!--            ></v-textarea>-->
+            <!--            <input type="text" name="foo" />-->
+            <v-text-field
+              name="name"
+              background-color="white"
+              type="text"
+              outlined
+              label="Naam"
+              hint="Jouw naam"
+            ></v-text-field>
+            <v-text-field
+              name="email"
+              background-color="white"
+              type="email"
+              outlined
+              label="Email"
+              hint="Jouw emailadres"
+            ></v-text-field>
+            <v-textarea
+              name="message"
+              background-color="white"
+              label="Bericht"
+              outlined
+              hint="Waar kunnen we je mee helpen?"
+            ></v-textarea>
             <v-btn
               class="mb-4 white--text"
               type="submit"
