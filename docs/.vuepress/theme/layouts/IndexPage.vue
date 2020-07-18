@@ -23,7 +23,7 @@
             </v-list-item-content>
           </v-list-item>
           <!-- TODO add validation-->
-          <form
+          <v-form
             name="zijderoute-contact-form"
             data-netlify="true"
             method="POST"
@@ -35,7 +35,6 @@
               name="form-name"
               value="zijderoute-contact-form"
             />
-            <!--            <input type="text" name="foo" />-->
             <v-text-field
               name="name"
               background-color="white"
@@ -58,14 +57,15 @@
               label="Bericht"
               outlined
               hint="Waar kunnen we je mee helpen?"
-            ></v-textarea>
+            >
+            </v-textarea>
             <v-btn
               class="mb-4 white--text"
               type="submit"
               color="light-green lighten-1"
               >Verstuur</v-btn
             >
-          </form>
+          </v-form>
         </v-card>
       </v-col>
     </v-row>
