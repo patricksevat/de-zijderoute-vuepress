@@ -22,32 +22,52 @@
               >
             </v-list-item-content>
           </v-list-item>
-          <!-- TODO add validation-->
-          <v-form class="pa-4 zr-form">
+          <v-form
+            name="zijderoute-contact-form"
+            data-netlify="true"
+            method="POST"
+            class="pa-4 zr-form"
+            enctype="application/x-www-form-urlencoded"
+            ref="zijderouteContactForm"
+          >
+            <input
+              type="hidden"
+              name="form-name"
+              value="zijderoute-contact-form"
+            />
             <v-text-field
+              name="name"
               background-color="white"
               type="text"
               outlined
               label="Naam"
               hint="Jouw naam"
+              :rules="[rules.required]"
+              required
             ></v-text-field>
             <v-text-field
+              name="email"
               background-color="white"
               type="email"
               outlined
               label="Email"
               hint="Jouw emailadres"
+              :rules="[rules.required]"
             ></v-text-field>
             <v-textarea
+              name="message"
               background-color="white"
               label="Bericht"
               outlined
               hint="Waar kunnen we je mee helpen?"
-            ></v-textarea>
+              :rules="[rules.required]"
+            >
+            </v-textarea>
             <v-btn
               class="mb-4 white--text"
               type="submit"
               color="light-green lighten-1"
+              @click="onFormSubmit($event)"
               >Verstuur</v-btn
             >
           </v-form>
@@ -83,6 +103,16 @@ export default {
   },
   data: () => ({
     mdiMessageReplyText,
+    rules: {
+      required: (value) => !!value || "Verplicht veld",
+    },
   }),
+  methods: {
+    onFormSubmit: function (event) {
+      if (!this.$refs?.zijderouteContactForm.validate()) {
+        event.preventDefault();
+      }
+    },
+  },
 };
 </script>
