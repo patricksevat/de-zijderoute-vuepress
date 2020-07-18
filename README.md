@@ -93,3 +93,6 @@ function retrieveCards () {
     * https://css-tricks.com/preventing-a-grid-blowout/
     * For now kept quite static in terms of columns
 * icons are imported using @mdi/js in .vuepress/config as SVGs during build time, other icons used in Vue components should be treeshaken
+* Netlify forms is bitchy
+    * (generates a weird undefined in textarea?) => seems to be part of vuetify
+    * appears set up was wrong, POST request missing?
